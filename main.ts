@@ -104,7 +104,7 @@ function showListAlbum() {
 }
 
 function addAlbum() {
-    let nameAlbum = input.question('nhap ten album:')
+    let nameAlbum = input.question('Nhap ten album:')
     let id = +input.question('Nhap ma Album:')
     listU.listUser[index].listAlbum.add(new Album(nameAlbum, id, []))
 }
