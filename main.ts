@@ -218,6 +218,7 @@ function searchMusic() {
 }
 
 function removeMusic() {
+    showMusic()
     let choice = +input.question('Nhap vi tri bai hat muon xoa:')
     indexAlbum.listMusic.splice(choice - 1, 1,)
 }
