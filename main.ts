@@ -98,8 +98,12 @@ function menuUser() {
 }
 
 function showListAlbum() {
-    for (let i = 0; i < listU.listUser[index].listAlbum.listAlbum.length; i++) {
-        console.log(`${i + 1}:    ${listU.listUser[index].listAlbum.listAlbum[i].name}      Ma Album: ${listU.listUser[index].listAlbum.listAlbum[i].id}`)
+    if (listU.listUser[index].listAlbum.listAlbum.length == 0) {
+        console.log('Danh sach Album trong!!!')
+    } else if (listU.listUser[index].listAlbum.listAlbum.length != 0) {
+        for (let i = 0; i < listU.listUser[index].listAlbum.listAlbum.length; i++) {
+            console.log(`${i + 1}:    ${listU.listUser[index].listAlbum.listAlbum[i].name}      Ma Album: ${listU.listUser[index].listAlbum.listAlbum[i].id}`)
+        }
     }
 }
 
@@ -193,9 +197,13 @@ function addMusic() {
 }
 
 function showMusic() {
-    for (let i = 0; i < indexAlbum.listMusic.length; i++) {
-        console.log(`${i + 1}:   Ten bai hat:${indexAlbum.listMusic[i].name}    Ca si:${indexAlbum.listMusic[i].singer}    Ma bai hat:${indexAlbum.listMusic[i].id}`)
+    if (indexAlbum.listMusic.length == 0) {
+        console.log('Danh sach bai hat trong!!!')
+    } else if (indexAlbum.listMusic.length != 0) {
+        for (let i = 0; i < indexAlbum.listMusic.length; i++) {
+            console.log(`${i + 1}:   Ten bai hat:${indexAlbum.listMusic[i].name}    Ca si:${indexAlbum.listMusic[i].singer}    Ma bai hat:${indexAlbum.listMusic[i].id}`)
 
+        }
     }
 }
 
