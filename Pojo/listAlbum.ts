@@ -28,11 +28,11 @@ export class ListAlbum implements Manager<Album>{
             console.log(`${i+1}:${this.listAlbum[i]}`)
         }
     }
-    findById(id){
-        this.listAlbum.filter((item)=>{
-            if(item.id==id)
-                return this.listAlbum
-        })
-    }
+    // findById(id){
+    //     this.listAlbum.filter((item)=>{
+    //         if(item.id==id)
+    //             return this.listAlbum
+    //     })
+    // }
 
 }
