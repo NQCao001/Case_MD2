@@ -5,15 +5,15 @@ import {ManageUser} from "./manage/manageUser";
 import {Music} from "./Pojo/music";
 
 let input = require('readline-sync')
+let listU: ManageUser = new ManageUser()
+let flag: boolean = null
+let index = null
+let indexAlbum
 
 function start() {
     console.log('----------------\n1.Dang nhap\n2.Dang ky tai khoan moi\n0.Thoat\n----------------')
 
 }
-
-let listU: ManageUser = new ManageUser()
-let flag: boolean = null
-let index = null
 
 function main() {
     let choice = null
@@ -59,7 +59,14 @@ function register() {
     let user = input.question('Nhap tai khoan moi:')
     let password = input.question('Nhap mat khau moi:')
     let listAlbumUser: ListAlbum = new ListAlbum()
-    listU.add(new User(user, password, listAlbumUser))
+    for (let i = 0; i < listU.listUser.length; i++) {
+        if (user == listU.listUser[i].user) {
+            console.log('Tai khoan da ton tai!!!')
+            break;
+        } else if (user != listU.listUser[i]) {
+            listU.add(new User(user, password, listAlbumUser))
+        }
+    }
 }
 
 function menuUser() {
@@ -132,8 +139,6 @@ function remove() {
     let id = +input.question('Nhap ma Album muon xoa:')
     listU.listUser[index].listAlbum.delete(id)
 }
-
-let indexAlbum
 
 function menuMusic() {
     let choice = null
